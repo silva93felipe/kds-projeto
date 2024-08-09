@@ -1,0 +1,16 @@
+@KdsApi_HostAddress = http://localhost:5261
+
+GET {{KdsApi_HostAddress}}/Atendente/
+Accept: application/json
+
+###
+
+POST {{KdsApi_HostAddress}}/Atendente/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Nome": "Hugo"
+}
+
+###

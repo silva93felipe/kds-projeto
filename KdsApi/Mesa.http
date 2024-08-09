@@ -1,0 +1,17 @@
+@KdsApi_HostAddress = http://localhost:5261
+
+GET {{KdsApi_HostAddress}}/Mesa/
+Accept: application/json
+
+###
+
+POST {{KdsApi_HostAddress}}/Mesa/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Codigo": "002"
+}
+
+###
+

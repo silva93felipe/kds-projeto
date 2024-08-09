@@ -20,6 +20,12 @@ public class MesaController : ControllerBase
         return Ok(_mesaService.GetAll());
     }
 
+    [HttpGet("{id:int}")]
+    public IActionResult GetById(int id)
+    {
+        return Ok(_mesaService.GetById(id));
+    }
+
     [HttpPost]
     public void Create(MesaRequest newMesa)
     {

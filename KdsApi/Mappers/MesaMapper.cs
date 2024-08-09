@@ -10,7 +10,7 @@ namespace KdsApi.Mappers
             return new Mesa(mesaRequest.Codigo);
         }
 
-        public static MesaResponse ToMesaRequest(Mesa mesa)
+        public static MesaResponse ToMesaResponse(Mesa mesa)
         {
             return new MesaResponse(mesa.Id, mesa.Codigo, mesa.Status.ToString());
         }

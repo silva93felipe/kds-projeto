@@ -10,8 +10,10 @@
         public List<ItemPedido> ItensPedido { get; private set; }
         public DateTime CreateAt { get; private set; }
         public DateTime UpdateAt { get; private set; }
+        private static int GeradorId = 0;
         public Pedido(int mesaId, int atendenteId)
         {
+            Id = GerarId();
             Ativo = true;
             Status = EStatusPedido.CRIADO;
             CreateAt = DateTime.Now;
@@ -25,6 +27,10 @@
         {
             var item = new ItemPedido(produtoId, quantidade);
             ItensPedido.Add(item);
+        }
+
+        private static int GerarId(){
+            return ++GeradorId;
         }
     }
 }

@@ -22,7 +22,17 @@ namespace KdsApi.Services
             var mesas = _mesaData.GetAll();
             var mesasDto = new List<MesaResponse>();
             foreach (var mesa in mesas)
-                mesasDto.Add(MesaMapper.ToMesaRequest(mesa));
+                mesasDto.Add(MesaMapper.ToMesaResponse(mesa));
+            return mesasDto;
+        }
+
+         public List<MesaResponse> GetById(int mesaId)
+        {
+            var mesa = _mesaData.GetById(mesaId);
+            var mesasDto = new List<MesaResponse>
+            {
+                MesaMapper.ToMesaResponse(mesa)
+            };
             return mesasDto;
         }
     }
