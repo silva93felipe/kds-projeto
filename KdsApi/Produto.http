@@ -1,0 +1,17 @@
+@KdsApi_HostAddress = http://localhost:5261
+
+GET {{KdsApi_HostAddress}}/Produto/
+Accept: application/json
+
+###
+
+POST {{KdsApi_HostAddress}}/Produto/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Nome": "Biscoito",
+    "Valor": 3.0
+}
+
+###

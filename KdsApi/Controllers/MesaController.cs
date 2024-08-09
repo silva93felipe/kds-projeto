@@ -9,10 +9,7 @@ namespace KdsApi.Controllers;
 public class MesaController : ControllerBase
 {
     private readonly MesaService _mesaService = new();
-    public MesaController()
-    {
-        
-    }
+    public MesaController(){}
 
     [HttpGet]
     public IActionResult GetAll()
@@ -23,12 +20,16 @@ public class MesaController : ControllerBase
     [HttpGet("{id:int}")]
     public IActionResult GetById(int id)
     {
-        return Ok(_mesaService.GetById(id));
+        var response = _mesaService.GetById(id);
+        if(response != null)
+            return Ok(response);
+        return NotFound();
     }
 
     [HttpPost]
-    public void Create(MesaRequest newMesa)
+    public IActionResult Create(MesaRequest newMesa)
     {
         _mesaService.Create(newMesa);
+        return Created();
     }
 }

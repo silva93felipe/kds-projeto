@@ -9,15 +9,14 @@ namespace KdsApi.Controllers;
 public class AtendenteController : ControllerBase
 {
     private readonly AtendenteService _atendenteService = new();
-    public AtendenteController()
-    {
-        
-    }
-
+    public AtendenteController() {}
     [HttpGet("{id:int}")]
     public IActionResult GetAll(int id)
     {
-        return Ok(_atendenteService.GetAll());
+        var response = _atendenteService.GetById(id);
+        if(response != null)
+            return Ok(response);
+        return NotFound();
     }
 
     [HttpGet]
@@ -27,8 +26,9 @@ public class AtendenteController : ControllerBase
     }
 
     [HttpPost]
-    public void Create(AtendenteRequest atendenteRequest)
+    public IActionResult Create(AtendenteRequest atendenteRequest)
     {
         _atendenteService.Create(atendenteRequest);
+        return Created();
     }
 }
