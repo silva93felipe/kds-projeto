@@ -26,14 +26,13 @@ namespace KdsApi.Services
             return produtoDto;
         }
 
-        public List<ProdutoResponse> GetById(int atendenteId)
+        public ProdutoResponse? GetById(int atendenteId)
         {
             var produto = _produtoData.GetById(atendenteId);
-            var produtoDto = new List<ProdutoResponse>
-            {
-                ProdutoMapper.ToProdutoResponse(produto)
-            };
-            return produtoDto;
+            if(produto == null)
+                return null;
+            else 
+                return ProdutoMapper.ToProdutoResponse(produto);
         }
     }
 }

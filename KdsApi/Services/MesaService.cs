@@ -26,14 +26,19 @@ namespace KdsApi.Services
             return mesasDto;
         }
 
-         public List<MesaResponse> GetById(int mesaId)
+        public MesaResponse? GetById(int mesaId)
         {
             var mesa = _mesaData.GetById(mesaId);
-            var mesasDto = new List<MesaResponse>
-            {
-                MesaMapper.ToMesaResponse(mesa)
-            };
-            return mesasDto;
+            if(mesa == null)
+                return null;
+            return MesaMapper.ToMesaResponse(mesa);
+        }
+
+        public void Reservar(int mesaId)
+        {
+            var mesa = _mesaData.GetById(mesaId);
+            if(mesa != null)
+               mesa.Reservar();
         }
     }
 }

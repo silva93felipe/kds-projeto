@@ -15,7 +15,7 @@ namespace KdsApi.Data
             return Mesas;
         }
         
-        public Mesa GetById(int id)
+        public Mesa? GetById(int id)
         {
             return Mesas.Find(e => e.Id == id);
         }

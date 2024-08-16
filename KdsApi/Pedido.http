@@ -10,8 +10,21 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "Codigo": "001"
+    "MesaId": 1,
+    "AtendenteId": 1,
+    "ItensPedido": [
+        {
+            "ProdutoId": 1,
+            "Quantidade": 2
+        }
+    ]
 }
+
+###
+
+
+GET {{KdsApi_HostAddress}}/Pedido/1
+Accept: application/json
 
 ###
 

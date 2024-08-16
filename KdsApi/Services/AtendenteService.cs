@@ -26,14 +26,14 @@ namespace KdsApi.Services
             return atendenteDto;
         }
 
-        public List<AtendenteResponse> GetById(int atendenteId)
+        public AtendenteResponse? GetById(int atendenteId)
         {
             var atendente = _atendenteData.GetById(atendenteId);
-            var atendenteDto = new List<AtendenteResponse>
-            {
-                AtendenteMapper.ToAtendenteResponse(atendente)
-            };
-            return atendenteDto;
+            if(atendente == null)
+                return null;
+            else{
+                return AtendenteMapper.ToAtendenteResponse(atendente);
+            }
         }
     }
 }

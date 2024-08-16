@@ -15,10 +15,9 @@ namespace KdsApi.Data
             return Atendentes;
         }
         
-        public Atendente GetById(int id)
+        public Atendente? GetById(int id)
         {
             return Atendentes.Find(e => e.Id == id);
         }
-        
     }
 }

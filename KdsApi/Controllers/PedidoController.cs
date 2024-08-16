@@ -20,8 +20,15 @@ public class PedidoController : ControllerBase
     [HttpPost]
     public IActionResult Create(PedidoRequest newPedido)
     {
-        _pedidoService.Create(newPedido);
-        return Created();
+        try
+        {
+            _pedidoService.Create(newPedido);
+            return Created();
+        }
+        catch (ArgumentException e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 
     [HttpGet("{id:int}")]

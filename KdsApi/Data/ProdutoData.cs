@@ -15,10 +15,9 @@ namespace KdsApi.Data
             return Produtos;
         }
         
-        public Produto GetById(int id)
+        public Produto? GetById(int id)
         {
             return Produtos.Find(e => e.Id == id);
         }
-        
     }
 }

@@ -11,7 +11,7 @@ public class AtendenteController : ControllerBase
     private readonly AtendenteService _atendenteService = new();
     public AtendenteController() {}
     [HttpGet("{id:int}")]
-    public IActionResult GetAll(int id)
+    public IActionResult GetById(int id)
     {
         var response = _atendenteService.GetById(id);
         if(response != null)

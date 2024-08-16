@@ -15,7 +15,7 @@ namespace KdsApi.Data
             return Pedidos;
         }
 
-        public Pedido GetById(int pedidoId)
+        public Pedido? GetById(int pedidoId)
         {
             return Pedidos.Find(p => p.Id == pedidoId);
         }

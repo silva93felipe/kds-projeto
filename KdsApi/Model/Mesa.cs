@@ -27,6 +27,12 @@
         {
             return !( string.IsNullOrEmpty(codigo) || string.IsNullOrWhiteSpace(codigo) );
         }
+
+        public void Reservar()
+        {
+            Status = EStatusMesa.EMATENDIMENTO;
+            UpdateAt = DateTime.Now;
+        }
     }
 }
 
