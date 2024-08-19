@@ -1,0 +1,8 @@
+<ion-card [color]="mesa.status == 'ABERTA' ? 'success': 'danger'">
+  <ion-card-header>
+    <ion-card-title>{{ mesa.codigo }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Chegada: {{ mesa.chegada }}
+  </ion-card-content>
+</ion-card>

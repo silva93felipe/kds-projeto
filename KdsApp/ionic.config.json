@@ -1,0 +1,7 @@
+{
+  "name": "KdsApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
