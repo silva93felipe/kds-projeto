@@ -1,10 +1,22 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Mesas
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <!-- <ion-title> Mesas </ion-title> -->
+        <ion-segment value="ABERTA" (ionChange)="handleSegment($event)" >
+            <ion-segment-button value="ABERTA">
+                <ion-label>Abertas</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="ATENDIMENTO">
+                <ion-label>Em Atendimento</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
-<ng-container *ngFor="let mesa of mesas">
-    <app-mesa [mesa]="mesa"></app-mesa>
-</ng-container>
+<ion-searchbar
+    placeholder="Código da mesa"
+    (ionInput)="handleInput($event)"
+></ion-searchbar>
+<ion-content>
+    <ion-list *ngFor="let mesa of mesaFilter" >
+        <app-mesa [mesa]="mesa"></app-mesa>
+    </ion-list>
+</ion-content>

@@ -1,8 +1,10 @@
-<ion-card [color]="mesa.status == 'ABERTA' ? 'success': 'danger'">
+<ion-card [color]="mesa.status == 'ABERTA' ? 'success': 'danger'" (click)="detalhes(mesa.id)">
   <ion-card-header>
     <ion-card-title>{{ mesa.codigo }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    Chegada: {{ mesa.chegada }}
+    Chegada: {{ mesa.chegada.toLocaleString() }}
   </ion-card-content>
+  <!-- <ion-button >Itens</ion-button> -->
+  <!-- <ion-button size="large" expand="block">Fechar</ion-button> -->
 </ion-card>

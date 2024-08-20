@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Mesa } from 'src/app/models/mesa';
 
@@ -11,7 +12,11 @@ import { Mesa } from 'src/app/models/mesa';
 })
 export class MesaComponent implements OnInit {
     @Input() mesa!: Mesa;
-    constructor() {}
+    constructor(private _router: Router){}
 
     ngOnInit() {}
+
+    public detalhes(mesaId: number){
+        this._router.navigate(["tabs/tab2"], { queryParams: { mesaId}});
+    }
 }
