@@ -19,6 +19,13 @@ namespace KdsApi.Data
         {
             return Mesas.Find(e => e.Id == id);
         }
+
+         public void Update(Mesa mesaUpdate)
+        {
+            var mesaDb = Mesas.Find(e => e.Id == mesaUpdate.Id);
+            if (mesaDb != null)
+               mesaDb = mesaUpdate;
+        }
         
     }
 }

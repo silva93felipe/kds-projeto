@@ -17,6 +17,7 @@ export class MesaComponent implements OnInit {
     ngOnInit() {}
 
     public detalhes(mesaId: number){
-        this._router.navigate(["tabs/tab2"], { queryParams: { mesaId}});
+        //this._router.navigate(["tabs/tab3"], { queryParams: { mesaId}});
+        this._router.navigate(["tabs/mesas/itens-mesa"], { queryParams: { mesaId}});
     }
 }

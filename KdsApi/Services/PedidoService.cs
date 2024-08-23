@@ -43,5 +43,18 @@ namespace KdsApi.Services
                 return null;
             return PedidoMapper.ToPedidoResponse(pedido);
         }
+
+         public void Fechar(int pedidoId)
+        {
+            var pedido = _pedidoData.GetById(pedidoId);
+            if(pedido == null)
+                throw new ArgumentException("Pedido not found");
+            var mesa = _mesaService.GetById(pedido.MesaId);
+            if(mesa == null)
+                throw new ArgumentException("Mesa not found");
+            pedido.Fechar();
+            _pedidoData.Fechar(pedido);
+            _mesaService.Liberar(pedido.MesaId);
+        }
     }
 }

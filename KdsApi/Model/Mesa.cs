@@ -33,12 +33,17 @@
             Status = EStatusMesa.EMATENDIMENTO;
             UpdateAt = DateTime.Now;
         }
+
+        public void Liberar()
+        {
+            Status = EStatusMesa.ABERTA;
+            UpdateAt = DateTime.Now;
+        }
     }
 }
 
 public enum EStatusMesa
 {
     ABERTA,
-    FECHADA,
     EMATENDIMENTO
 }

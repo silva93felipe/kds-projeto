@@ -10,19 +10,20 @@ import {
     IonSegment,
     IonSegmentButton,
     IonLabel,
+    IonRouterOutlet,
 } from '@ionic/angular/standalone';
 import { MesaComponent } from '../components/mesa/mesa.component';
 import { Mesa } from '../models/mesa';
 import { NgFor } from '@angular/common';
 
 @Component({
-    selector: 'app-tab1',
-    templateUrl: 'tab1.page.html',
-    styleUrls: ['tab1.page.scss'],
+    selector: 'app-mesas',
+    templateUrl: 'mesas.page.html',
+    styleUrls: ['mesas.page.scss'],
     standalone: true,
-    imports: [IonHeader, IonToolbar, IonTitle, IonContent, MesaComponent, NgFor, IonList, IonSearchbar, IonSegmentButton, IonLabel, IonSegment],
+    imports: [IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, MesaComponent, NgFor, IonList, IonSearchbar, IonSegmentButton, IonLabel, IonSegment],
 })
-export class Tab1Page {
+export class MesasPage {
     public mesas: Mesa[] = [
         {
             id: 1,

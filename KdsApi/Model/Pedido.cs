@@ -2,6 +2,7 @@
 {
     public class Pedido
     {
+        private static int GeradorId = 0;
         public int Id { get; private set; }
         public bool Ativo {  get; private set; }
         public int AtendenteId { get; private set; }
@@ -10,7 +11,6 @@
         public List<ItemPedido> ItensPedido { get; private set; }
         public DateTime CreateAt { get; private set; }
         public DateTime UpdateAt { get; private set; }
-        private static int GeradorId = 0;
         public Pedido(int mesaId, int atendenteId)
         {
             Id = GerarId();
@@ -31,6 +31,11 @@
 
         private static int GerarId(){
             return ++GeradorId;
+        }
+
+        public void Fechar(){
+            Status = EStatusPedido.FINALIZADO;
+            UpdateAt = DateTime.Now;
         }
     }
 }

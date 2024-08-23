@@ -1,6 +1,5 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <!-- <ion-title> Mesas </ion-title> -->
         <ion-segment value="ABERTA" (ionChange)="handleSegment($event)" >
             <ion-segment-button value="ABERTA">
                 <ion-label>Abertas</ion-label>
@@ -20,3 +19,5 @@
         <app-mesa [mesa]="mesa"></app-mesa>
     </ion-list>
 </ion-content>
+
+<ion-router-outlet></ion-router-outlet>

@@ -37,8 +37,18 @@ namespace KdsApi.Services
         public void Reservar(int mesaId)
         {
             var mesa = _mesaData.GetById(mesaId);
-            if(mesa != null)
-               mesa.Reservar();
+            if(mesa != null){
+                mesa.Reservar();
+                _mesaData.Update(mesa);
+            }
+        }
+
+        public void Liberar(int mesaId){
+            var mesa = _mesaData.GetById(mesaId);
+            if(mesa != null){
+                mesa.Liberar();
+                _mesaData.Update(mesa);
+            }
         }
     }
 }

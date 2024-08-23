@@ -19,5 +19,11 @@ namespace KdsApi.Data
         {
             return Pedidos.Find(p => p.Id == pedidoId);
         }
+        public void Fechar(Pedido pedido)
+        {
+            var pedidoDb = Pedidos.Find(p => p.Id == pedido.Id);
+            if(pedidoDb != null)
+                pedidoDb = pedido;
+        }
     }
 }

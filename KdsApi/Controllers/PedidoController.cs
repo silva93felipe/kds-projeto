@@ -39,4 +39,20 @@ public class PedidoController : ControllerBase
             return Ok(response);
         return NotFound();
     }
+
+    [HttpPost]
+    [Route("Fechar/{id:int}")]
+    public IActionResult Fechar(int id)
+    {
+        try
+        {
+            _pedidoService.Fechar(id);
+            return NoContent();
+        }
+        catch (ArgumentException err)
+        {
+            return BadRequest(err.Message);
+        }
+        
+    }
 }

@@ -19,6 +19,10 @@ import {
     IonCardContent,
     IonCardSubtitle,
     IonCardTitle,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonBadge,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { removeOutline, addOutline, trash, cart, wallet } from 'ionicons/icons';
@@ -51,6 +55,10 @@ import { NgFor } from '@angular/common';
         IonCardContent,
         IonCardSubtitle, 
         IonCardTitle, 
+        IonGrid,
+        IonRow,
+        IonCol,
+        IonBadge
     ],
 })
 export class Tab2Page {

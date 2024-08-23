@@ -22,9 +22,12 @@ Content-Type: application/json
 
 ###
 
-
 GET {{KdsApi_HostAddress}}/Pedido/1
 Accept: application/json
 
 ###
 
+POST {{KdsApi_HostAddress}}/Pedido/Fechar/1
+Accept: application/json
+
+###
