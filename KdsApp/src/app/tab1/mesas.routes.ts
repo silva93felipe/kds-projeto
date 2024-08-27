@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
-import { MesasPage } from './mesas.page';
+import { MesasPage } from './screens/mesas/mesas.page';
+import { Tab1Page } from './tab1.page';
 
 export const routes: Routes = [
   {
     path: '',
-    component: MesasPage,
+    component: Tab1Page,
     children: [
       {
         path: 'itens-mesa',
@@ -17,15 +18,20 @@ export const routes: Routes = [
           import('./screens/produtos/produtos.page').then((m) => m.ProdutosPage),
       },
       {
+        path: 'mesas',
+        loadComponent: () =>
+          import('./screens/mesas/mesas.page').then((m) => m.MesasPage),
+      },
+      {
         path: '',
-        redirectTo: '',
+        redirectTo: 'mesas',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '',
+    redirectTo: 'mesas',
     pathMatch: 'full',
   },
 ];

@@ -1,0 +1,65 @@
+import { Component } from '@angular/core';
+import {
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonButtons,
+    IonButton,
+    IonBackButton,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonNote,
+    IonIcon,
+    IonFooter,
+    IonActionSheet,
+    IonCard,
+    IonCardHeader,
+    IonCardContent,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonBadge,
+    IonRouterOutlet,
+} from '@ionic/angular/standalone';
+import { NgFor } from '@angular/common';
+
+@Component({
+    selector: 'app-tab1',
+    templateUrl: 'tab1.page.html',
+    styleUrls: ['tab1.page.scss'],
+    standalone: true,
+    imports: [
+        IonHeader,
+        IonToolbar,
+        IonTitle,
+        IonContent,
+        IonButtons,
+        IonButton,
+        IonBackButton,
+        IonList,
+        IonItem,
+        IonLabel,
+        IonNote,
+        IonIcon,
+        IonFooter,
+        NgFor,
+        IonActionSheet,
+        IonCard,
+        IonCardHeader,
+        IonCardContent,
+        IonCardSubtitle, 
+        IonCardTitle, 
+        IonGrid,
+        IonRow,
+        IonCol,
+        IonBadge,
+        IonRouterOutlet
+    ],
+})
+export class Tab1Page {
+    constructor() { }
+}

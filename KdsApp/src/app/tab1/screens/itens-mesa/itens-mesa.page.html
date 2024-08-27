@@ -1,1 +1,25 @@
-<h1>ITENS</h1>
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button ></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end" (click)="getProdutos()">
+            <ion-icon name="cart" size="large">
+            </ion-icon>
+            <ion-badge color="success"> 
+                {{ quantidadeTotalItens() }}
+            </ion-badge>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list *ngFor="let produto of produtos">
+        <app-produto [produto]="produto"></app-produto>
+    </ion-list>
+  </ion-content>
+<ion-list [inset]="true" lines="none">
+    <ion-item >
+        <ion-icon slot="start" name="wallet" size="large"></ion-icon>
+        <ion-label> R$ {{ valorTotalItens() }} </ion-label>
+    </ion-item>
+</ion-list>

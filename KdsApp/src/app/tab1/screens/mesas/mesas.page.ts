@@ -12,9 +12,10 @@ import {
     IonLabel,
     IonRouterOutlet,
 } from '@ionic/angular/standalone';
-import { MesaComponent } from '../components/mesa/mesa.component';
-import { Mesa } from '../models/mesa';
+import { MesaComponent } from '../../../components/mesa/mesa.component';
+import { Mesa } from '../../../models/mesa';
 import { NgFor } from '@angular/common';
+import { MesaMock } from 'src/app/mocks/MesaMock';
 
 @Component({
     selector: 'app-mesas',
@@ -24,44 +25,7 @@ import { NgFor } from '@angular/common';
     imports: [IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, MesaComponent, NgFor, IonList, IonSearchbar, IonSegmentButton, IonLabel, IonSegment],
 })
 export class MesasPage {
-    public mesas: Mesa[] = [
-        {
-            id: 1,
-            codigo: "001",
-            status: "ABERTA",
-            chegada: new Date()
-        },
-        {
-            id: 2,
-            codigo: "002",
-            status: "ABERTA",
-            chegada: new Date()
-        },
-        {
-            id: 3,
-            codigo: "003",
-            status: "ATENDIMENTO",
-            chegada: new Date()
-        },
-        {
-            id: 4,
-            codigo: "004",
-            status: "ATENDIMENTO",
-            chegada: new Date()
-        },
-        {
-            id: 4,
-            codigo: "004",
-            status: "ATENDIMENTO",
-            chegada: new Date()
-        },
-        {
-            id: 4,
-            codigo: "004",
-            status: "ATENDIMENTO",
-            chegada: new Date()
-        }
-    ];
+    public mesas: Mesa[] = MesaMock.gerarMesas();
     public mesaFilter = [ ...this.mesas];
     constructor() {}
 

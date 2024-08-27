@@ -1,1 +1,12 @@
-<h1>PRODUTOS</h1>
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list *ngFor="let produto of produtos">
+        <app-produto [produto]="produto"></app-produto>
+    </ion-list>
+</ion-content>
