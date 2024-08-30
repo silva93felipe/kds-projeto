@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { MesasPage } from './screens/mesas/mesas.page';
 import { Tab1Page } from './tab1.page';
 
 export const routes: Routes = [

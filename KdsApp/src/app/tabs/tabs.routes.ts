@@ -9,7 +9,6 @@ export const routes: Routes = [
       {
         path: 'tab1',
         loadChildren: () => import('../tab1/mesas.routes').then((m) => m.routes),
-        // loadChildren: () => import('../tab1/mesas.routes').then((m) => m.routes),
       },
       {
         path: 'tab2',
