@@ -28,7 +28,11 @@ import { NgFor } from '@angular/common';
 import { ProdutoMock } from 'src/app/mocks/ProdutoMock';
 import { ProdutoComponent } from "../../../components/produto/produto.component";
 import { Produto } from 'src/app/models/produto';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Mesa } from 'src/app/models/mesa';
+import { MesaMock } from 'src/app/mocks/MesaMock';
+import { addIcons } from 'ionicons';
+import { addOutline, cart, removeOutline, wallet } from 'ionicons/icons';
 
 @Component({
     selector: 'app-itens-mesa',
@@ -64,7 +68,10 @@ import { Route, Router } from '@angular/router';
 ]
 })
 export class ItensMesaPage {
+    private mesaIdParametroRota: number = 0;
     public produtos: Produto[] = ProdutoMock.gerarListaProduto();
+    public mesas: Mesa[] = MesaMock.gerarMesas();
+    public mesaSelecionada?: Mesa;
     public actionSheetButtons = [
         {
             text: 'Adicionar itens',
@@ -82,17 +89,24 @@ export class ItensMesaPage {
         },
     ];
 
-    constructor(private _router: Router) {
+    constructor(private _router: Router, private _activedRote: ActivatedRoute ) {
+        addIcons({ addOutline, removeOutline, cart, wallet })
+        this.mesaIdParametroRota = _activedRote.snapshot.queryParams["mesaId"];
+        if(this.mesaIdParametroRota){
+            let mesa = this.mesas.find(e => e.id == this.mesaIdParametroRota);
+            if(mesa)
+                this.mesaSelecionada = mesa;
+        }
     }
 
     public valorTotalItens(){
-        return this.produtos.reduce((acumulador, objeto) => {
+        return this.mesaSelecionada?.itens.reduce((acumulador, objeto) => {
             return acumulador += (objeto.valor * objeto.quantidade);
         }, 0)
     }
 
     public quantidadeTotalItens(){
-        return this.produtos.reduce((acumulador, objeto) => {
+        return this.mesaSelecionada?.itens.reduce((acumulador, objeto) => {
             return acumulador += objeto.quantidade;
         }, 0)
     }

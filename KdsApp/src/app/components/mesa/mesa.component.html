@@ -1,8 +1,14 @@
-<ion-card [color]="mesa.status == 'ABERTA' ? 'success': 'danger'" (click)="detalhes(mesa.id)">
+<ion-card mode="ios" [color]="mesa.status == 'ABERTA' ? 'success': 'danger'" (click)="detalhes(mesa.id)">
   <ion-card-header>
-    <ion-card-title>{{ mesa.codigo }}</ion-card-title>
+      <ion-card-title >
+        Mesa {{ mesa.codigo }}
+    </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    Chegada: {{ mesa.chegada.toLocaleString() }}
+    <ion-item [color]="mesa.status == 'ABERTA' ? 'success': 'danger'" lines="none">
+        <ion-label *ngIf="mesa.status == 'ATENDIMENTO'" >
+            Chegada: {{ mesa.chegada.toLocaleString() }}
+        </ion-label>
+    </ion-item>
   </ion-card-content>
 </ion-card>

@@ -1,7 +1,11 @@
-<ion-tabs>
+<ion-tabs  (ionTabsDidChange)="onTabChange($event)">
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab1" href="/tabs/tab1">
-        <ion-icon name="fast-food-outline" color="primary"></ion-icon>
+        <ion-icon [name]="selectedTab === 'tab1' ? 'fast-food': 'fast-food-outline' "></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="tab2" href="/tabs/tab2">
+        <ion-icon [name]="selectedTab === 'tab2' ? 'storefront'  : 'storefront-outline' "></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
+  
