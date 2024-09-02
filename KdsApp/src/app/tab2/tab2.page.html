@@ -1,1 +1,19 @@
-<p>TAB2</p>
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-searchbar
+    placeholder="Qual o produto?"
+    (ionInput)="handleInput($event)"
+></ion-searchbar>
+<ion-content>
+    <ion-list *ngFor="let produto of produtosFilter">
+        <app-produto [produto]="produto"></app-produto>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="carregarMaisProdutos($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+</ion-content>

@@ -13,4 +13,7 @@
     <ion-list *ngFor="let produto of produtosFilter">
         <app-produto [produto]="produto"></app-produto>
     </ion-list>
+    <ion-infinite-scroll (ionInfinite)="carregarMaisProdutos($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
 </ion-content>

@@ -3,11 +3,11 @@
         <h2> {{ produto.nome }}</h2>
         <p>R$ {{ produto.valor }}</p>
     </ion-label>
-    <ion-button size="small" color="danger" slot="end" (click)="handleQuantidade('minus',  produto.id)">
+    <ion-button size="small" color="danger" slot="end" (click)="handleQuantidade('minus',  produto)">
         <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
     </ion-button>
     <ion-label slot="end">{{ produto.quantidade }}</ion-label>
-    <ion-button size="small" color="success" slot="end" (click)="handleQuantidade('plus',  produto.id)">
+    <ion-button size="small" color="success" slot="end" (click)="handleQuantidade('plus',  produto)">
         <ion-icon slot="icon-only"  name="add-outline"></ion-icon>            
     </ion-button>
 </ion-item>

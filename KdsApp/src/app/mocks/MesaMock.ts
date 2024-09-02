@@ -72,21 +72,66 @@ export class MesaMock{
                 codigo: "004",
                 status: "ATENDIMENTO",
                 chegada: new Date(),
-                itens: []
+                itens: [
+                    {
+                        id: 1,
+                        codigo: "10",
+                        nome: "Sorteve 300ml Morango",
+                        valor: 3,
+                        quantidade: 1
+                    },
+                    {
+                        id: 2,
+                        codigo: "10",
+                        nome: "Pastel de carne de sol",
+                        valor: 10,
+                        quantidade: 1
+                    },
+                ]
             },
             {
                 id: 5,
                 codigo: "005",
                 status: "ATENDIMENTO",
                 chegada: new Date(),
-                itens: []
+                itens: [
+                    {
+                        id: 1,
+                        codigo: "10",
+                        nome: "Sorteve 300ml Morango",
+                        valor: 3,
+                        quantidade: 2
+                    },
+                    {
+                        id: 2,
+                        codigo: "10",
+                        nome: "Pastel de carne de sol",
+                        valor: 10,
+                        quantidade: 1
+                    },
+                ]
             },
             {
                 id: 6,
                 codigo: "006",
                 status: "ATENDIMENTO",
                 chegada: new Date(),
-                itens: []
+                itens: [
+                    {
+                        id: 1,
+                        codigo: "10",
+                        nome: "Sorteve 300ml Morango",
+                        valor: 3,
+                        quantidade: 3
+                    },
+                    {
+                        id: 2,
+                        codigo: "10",
+                        nome: "Pastel de carne de sol",
+                        valor: 10,
+                        quantidade: 2
+                    },
+                ]
             }
         ];
     }

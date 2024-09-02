@@ -22,14 +22,13 @@ export class ProdutoComponent  implements OnInit {
     
   }
 
-  public handleQuantidade(action: string, produtoId: number){
+  public handleQuantidade(action: string, produto: Produto){
     switch (action) {
         case "plus":
-           // ++this.produtos.find(p => p.id == produtoId)!.quantidade;
+            ++produto.quantidade;
             break;
         case "minus":
-            //if(this.produtos.find(p => p.id == produtoId)!.quantidade > 0)
-              //  --this.produtos.find(p => p.id == produtoId)!.quantidade;
+            --produto.quantidade;
             break;
         default:
             break;
