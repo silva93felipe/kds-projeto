@@ -15,13 +15,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 
 import { PedidoComponent } from './components/pedido/pedido.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { PedidosComponent } from './pages/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PedidoComponent,
-    NavbarComponent
+    NavbarComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
